@@ -9,4 +9,4 @@ Inside the repository, open the index.js and solve the logic problem(s) provided
 - Write your solutions in the provided file(s) and ensure that they are functional.
 - Include comments where necessary to explain your approach.
 
----
+## GoodLuck! 🍀
