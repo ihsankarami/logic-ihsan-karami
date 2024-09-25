@@ -13,7 +13,34 @@ The next largest word is abdc.
 Complete the function biggerIsGreater below to create and return the new string meeting the criteria. If it is not possible, return no answer.
 */
 
+function biggerIsGreater(word) {
+  // Write your code here
 
-function biggerIsGreater() {
-    // Write your code here
+  // make string to array
+  let chars = word.split("");
+  let n = chars.length;
+  let i, x;
+
+  for (i = n - 2; i >= 0; i--) {
+    if (chars[i] < chars[i + 1]) {
+      break;
+    }
+  }
+
+  if (i === -1) {
+    return "no answer";
+  }
+
+  for (x = n - 1; x > 1; x--) {
+    if (chars[x] > chars[i]) {
+      break;
+    }
+  }
+
+  [chars[i], chars[x]] = [chars[x], chars[i]];
+
+  let a = chars.slice(i + 1).reverse();
+  chars = chars.slice(0, i + 1).concat(a);
+
+  return chars.join("");
 }

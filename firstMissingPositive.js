@@ -17,10 +17,22 @@ Output: 1
 Explanation: The smallest missing positive integer is 1 since none of the positive integers starting from 1 are present.
 */
 
-
-function firstMissingPositive() {
+function firstMissingPositive(numbers) {
   // Write your code here
-}
 
+  // Filter positive numbers and sort the array
+  let positiveNums = numbers.filter((num) => num > 0).sort((a, b) => a - b);
+  // Start looking the smallest missing positive from 1
+  let smallestMissing = 1;
+
+  for (let i = 0; i < positiveNums.length; i++) {
+    // If the current number equals the smallestMissing, move to the next
+    if (positiveNums[i] === smallestMissing) {
+      smallestMissing++;
+    }
+  }
+
+  return smallestMissing;
+}
 
 module.exports = firstMissingPositive;
